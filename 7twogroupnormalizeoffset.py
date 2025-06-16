@@ -172,7 +172,7 @@ def plot_two_device_comparison(device1_id, device1_data, device2_id, device2_dat
         plt.plot(time_axis1, curve1, 
                  linestyle='-', 
                  linewidth=1.5, 
-                 label=f'Device {device1_id}')
+                 label=f'{device1_id}')
     else:
         print(f"Warning: Data for Device {device1_id} is incomplete or missing, will not be plotted.")
 
@@ -184,14 +184,14 @@ def plot_two_device_comparison(device1_id, device1_data, device2_id, device2_dat
         plt.plot(time_axis2_shifted, curve2, 
                  linestyle='-', 
                  linewidth=1.5, 
-                 label=f'Device {device2_id} (shifted by {shift_device2_by_n:.2f}s)') # Update label to reflect shift
+                 label=f'{device2_id} (shifted by {shift_device2_by_n:.2f}s)') # Update label to reflect shift
     else:
         print(f"Warning: Data for Device {device2_id} is incomplete or missing, will not be plotted.")
 
 
-    plt.xlabel('Relative Time (s) [Event Start Aligned at t\'=0]')
-    plt.ylabel('Normalized Mean Acceleration y (Amplitude)')
-    plt.title(f'Comparison: Device {device1_id} vs. Device {device2_id} (Normalized Mean Accel.)')
+    plt.xlabel('Relative Time (s)')
+    plt.ylabel('Acceleration y')
+    plt.title(f'{device1_id} vs. {device2_id} (Normalized)')
     plt.grid(True)
     plt.legend(fontsize='medium')
     
